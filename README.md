@@ -13,24 +13,16 @@ live web dashboard — updating every 2 seconds.
 
 ## 📸 Dashboard Preview
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  Network Packet Analyzer          [Live] ● Sniffer Active       │
-├──────────────┬──────────────┬──────────────┬────────────────────┤
-│ Total Pkts   │ Total Alerts │ Top Talker   │ Top Protocol       │
-│ 10,291       │ 3            │ 10.0.2.15    │ TCP                │
-├──────────────┴──────────────┴──────────────┴────────────────────┤
-│ Live Traffic (pkts/sec)          │ Protocol Breakdown           │
-│  ▁▂▄▆█▇▅▃▂▄▆█▇▅▃▁▂▄▆█         │   TCP  ████████ 59%         │
-│                                  │   UDP  █████    30%          │
-│                                  │   DNS  ██        9%          │
-│                                  │   ICMP █         1%          │
-├──────────────────────────────────┼─────────────────────────────-┤
-│ Top Talkers                      │ Alert Feed                   │
-│  10.0.2.15      ████████ 4515    │ [HIGH] PORT_SCAN — 10.0.2.15 │
-│  203.192.x.x    █████    1729    │ 22 SYNs in 10s               │
-│  142.251.x.x    ███       760    │ [MED]  DNS_TUNNEL — 10.0.2.1 │
-└──────────────────────────────────┴──────────────────────────────┘
+
+
+![Dashboard Screenshot](docs/dashboard.png)
+
+**The live dashboard shows:**
+- **Live traffic graph** — packets per second updating every 2 seconds
+- **Protocol breakdown** — TCP vs UDP vs DNS distribution
+- **Top talkers** — most active source IPs on the network
+- **Alert feed** — real-time threat detection alerts with severity levels
+- **Stat cards** — total packets, alerts, top talker IP, dominant protocol
 ```
 
 ---
