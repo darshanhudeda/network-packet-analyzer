@@ -21,7 +21,7 @@ live web dashboard — updating every 2 seconds.
 │ 10,291       │ 3            │ 10.0.2.15    │ TCP                │
 ├──────────────┴──────────────┴──────────────┴────────────────────┤
 │ Live Traffic (pkts/sec)          │ Protocol Breakdown           │
-│  ▁▂▄▆█▇▅▃▂▄▆█▇▅▃▁▂▄▆█         │   TCP  ████████ 59%         │
+│  ▁▂▄▆█▇▅▃▂▄▆█▇▅▃▁▂▄▆█             │   TCP  ████████ 59%         │
 │                                  │   UDP  █████    30%          │
 │                                  │   DNS  ██        9%          │
 │                                  │   ICMP █         1%          │
