@@ -70,45 +70,7 @@ live web dashboard — updating every 2 seconds.
 
 ## 🏗️ Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        main.py                              │
-│              (Entry point — wires everything)               │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-          ┌────────────────┴────────────────┐
-          │                                 │
-          ▼                                 ▼
-┌─────────────────┐               ┌─────────────────┐
-│ capture/        │               │ dashboard/      │
-│ sniffer.py      │               │ app.py          │
-│                 │               │ layouts.py      │
-│ Scapy sniff()   │               │ callbacks.py    │
-│ runs in         │               │                 │
-│ daemon thread   │               │ Dash web server │
-└────────┬────────┘               │ runs on :8050   │
-         │                        └────────┬────────┘
-         │  every packet                   │  every 2s
-         ▼                                 ▼
-┌─────────────────┐               ┌─────────────────┐
-│ parsers/        │               │ db/logger.py    │
-│ tcp_parser.py   │◄──────────────│                 │
-│ dns_parser.py   │  log_packet() │ PacketLogger    │
-│ http_parser.py  │  log_alert()  │ class           │
-│ arp_parser.py   │──────────────►│                 │
-└────────┬────────┘               │ SQLite          │
-         │                        │ packets.db      │
-         ▼                        └─────────────────┘
-┌─────────────────┐
-│ detectors/      │
-│ port_scan.py    │
-│ brute_force.py  │
-│ dns_tunnel.py   │
-│                 │
-│ Sliding window  │
-│ alert engine    │
-└─────────────────┘
-```
+![Dataflow picture](docs/dataflow.png)
 
 **Data flow:**
 1. `sniffer.py` captures raw packets from the network interface
