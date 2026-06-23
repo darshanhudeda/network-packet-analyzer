@@ -23,7 +23,6 @@ live web dashboard — updating every 2 seconds.
 - **Top talkers** — most active source IPs on the network
 - **Alert feed** — real-time threat detection alerts with severity levels
 - **Stat cards** — total packets, alerts, top talker IP, dominant protocol
-```
 
 ---
 
